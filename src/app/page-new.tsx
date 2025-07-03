@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import { useAuth } from './components/AuthProvider'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -9,13 +8,6 @@ import { Dumbbell, TrendingUp, Users, Calendar, Brain, Zap } from 'lucide-react'
 export default function Home() {
   const { user, loading } = useAuth()
   const router = useRouter()
-
-  // Handle navigation in useEffect to avoid setState during render
-  useEffect(() => {
-    if (!loading && user) {
-      router.push('/dashboard')
-    }
-  }, [user, loading, router])
 
   if (loading) {
     return (
@@ -29,17 +21,10 @@ export default function Home() {
     )
   }
 
-  // If user is logged in, show loading while redirecting
+  // If user is logged in, redirect to dashboard
   if (user) {
-    return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0A0A' }}>
-        <div className="flex flex-col items-center space-y-8">
-          <div className="relative">
-            <div className="w-20 h-20 rounded-full border-2 border-white/20 border-t-white animate-spin"></div>
-          </div>
-        </div>
-      </div>
-    )
+    router.push('/dashboard')
+    return null
   }
 
   return (

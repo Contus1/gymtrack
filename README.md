@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gym Tracker 💪
 
-## Getting Started
+A clean, minimalistic gym tracker built with Next.js, TypeScript, Tailwind CSS, and Supabase. Track your workouts, maintain streaks, and stay motivated with friends.
 
-First, run the development server:
+## ✨ Features
 
+- **Personal Workout Streaks** - Track your consistency (lost after 3 days of inactivity)
+- **Simple Workout Logging** - Log body parts, mood, and notes with a clean interface
+- **Friend Streaks** - Connect with up to 6 friends and motivate each other
+- **Visual Timeline** - See your active and rest days at a glance
+- **AI Feedback** - Get personalized encouragement and workout recommendations
+- **PWA Support** - Install on mobile for quick workout logging
+- **Clean Design** - Apple/Notion-inspired minimalistic interface
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS
+- **Backend**: Supabase (Auth + Database)
+- **Icons**: Lucide React
+- **Styling**: Mobile-first responsive design
+- **PWA**: Progressive Web App capabilities
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm/yarn/pnpm
+- Supabase account
+
+### Setup
+
+1. **Clone and install dependencies**:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Configure Supabase**:
+   - Create a new project at [supabase.com](https://supabase.com)
+   - Copy your project URL and anon key
+   - Update `.env.local`:
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Run the development server**:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Open** [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## 📱 Mobile Installation (PWA)
 
-To learn more about Next.js, take a look at the following resources:
+1. Visit the site on your mobile device
+2. Tap the "Add to Home Screen" prompt
+3. Enjoy native-like experience!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Design Principles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Light & Minimalistic** - Clean Apple/Notion-inspired design
+- **Maximum Spacing** - No clutter, focus on clarity
+- **Mobile-First** - Optimized for phone usage
+- **Readable Stats** - All information at a glance
+- **Friendly & Clear** - Encouraging user experience
 
-## Deploy on Vercel
+## 📁 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/
+│   ├── components/
+│   │   └── AuthProvider.tsx
+│   ├── dashboard/
+│   │   └── page.tsx
+│   ├── login/
+│   │   └── page.tsx
+│   ├── signup/
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── lib/
+│   └── supabase.ts
+public/
+├── manifest.json
+└── icons/
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Deployment
+
+Deploy on Vercel (recommended):
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Add your environment variables in Vercel dashboard
+4. Deploy!
+
+## 📝 Environment Variables
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+```
+
+## 🤝 Contributing
+
+This is a minimal, focused gym tracker. When contributing:
+
+- Keep the design clean and minimal
+- Follow mobile-first approach
+- Maintain TypeScript standards
+- Test on mobile devices
+
+## 📄 License
+
+MIT License - feel free to use this project for your own gym tracking needs!
+
+---
+
+**Built with ❤️ for a cleaner, more focused fitness tracking experience.**
